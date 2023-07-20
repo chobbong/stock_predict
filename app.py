@@ -5,9 +5,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 from pandas_datareader import data as pdr
 from datetime import date
+import json
 import streamlit as st
 
 warnings.filterwarnings('ignore')
+
+# JSON 파일 읽기
+with open("krx_code.json", "r") as f:
+    stock_dict = json.load(f)
 
 yf.pdr_override()
 
@@ -94,8 +99,13 @@ def AA(ticker_name):
 
 
 with st.form(key='my_form'):
-    ticker_num = st.text_input("종목코드를 입력하세요: ")
-    ticker_name = ticker_num + ".KS"
+    ticker_num = st.text_input("종목명 또는 종목코드를 입력하세요: ")
+   # 종목 코드 또는 이름에 따라 종목 찾기
+    ticker_name = None
+    if ticker_num in stock_dict.values():  # 입력 값이 종목 코드인 경우
+        ticker_name = ticker_num + ".KS"
+    elif ticker_num in stock_dict.keys():  # 입력 값이 종목 이름인 경우
+        ticker_name = stock_dict[ticker_num] + ".KS"
     
     # When the user presses the button, the form will stop showing, and this function will return True.
     submit_button = st.form_submit_button(label='Submit')
