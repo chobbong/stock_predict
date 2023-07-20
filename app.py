@@ -83,7 +83,7 @@ class PatternFinder():
 def AA(ticker_name):
     p = PatternFinder()
     p.set_stock(ticker_name)
-    result = p.search('2023-03-01',date.today().strftime('%Y-%m-%d'))
+    result = p.search('2023-05-01',date.today().strftime('%Y-%m-%d'))
     
     if len(result) >= 2:
         second_row_index = result.index[1]  # 두 번째 행의 인덱스 값을 가져옵니다.
