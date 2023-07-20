@@ -86,7 +86,7 @@ def AA(ticker_name):
     result = p.search('2023-05-01',date.today().strftime('%Y-%m-%d'))
     
     if len(result) >= 2:
-        second_row_index = result.index[1]  # 두 번째 행의 인덱스 값을 가져옵니다.
+        second_row_index = result.index[2]  # 두 번째 행의 인덱스 값을 가져옵니다.
         p.plot_pattern(second_row_index)
     else:
         st.write('Not enough data for this ticker.')
