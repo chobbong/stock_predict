@@ -97,13 +97,15 @@ def AA(ticker_name):
     else:
         st.write('Not enough data for this ticker.')
         return
-
+    
+today_2 = date.today().strftime('%Y-%m-%d')
 st.subheader('AI Stock Prediction App')
 st.write("""
         하기 주가예측은 참고용으로만 사용하시기 바랍니다.   
         이 주가예측 시스템은 사용자의 투자의 이익이나 손실에 대해 어떠한 책임도 지지 않습니다.  
-        이 시스템은 AI에 기반한 것으로, 정확도나 신뢰도를 보장하지 않습니다.   """)
-st.write (f"{today}")
+        이 시스템은 AI에 기반한 것으로, 정확도나 신뢰도를 보장하지 않습니다.     
+        이 예측은 현재부터 한 주후까지의 예측입니다.""")
+st.write(f"이 예측은 {today_2}부터 5일후까지의 예측입니다")
 
 with st.form(key='my_form'):
     ticker_num = st.text_input("종목명 또는 종목코드를 입력하세요: ")
