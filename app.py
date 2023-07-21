@@ -111,7 +111,7 @@ latest_close_price = kospi_df['Close'].iloc[-1]
 latest_close_price = round(latest_close_price, 2)
 
 st.subheader("""
-AI Stock Prediction App  
+🚀 AI Stock Prediction App  
 ver.0.0.1
 """)
 st.write("""
