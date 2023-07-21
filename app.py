@@ -99,6 +99,16 @@ def AA(ticker_name):
         return
     
 today_2 = date.today().strftime('%Y-%m-%d')
+
+# Get the data for the KOSPI
+kospi = yf.Ticker("^KS11")
+
+# Get the historical prices for this ticker
+kospi_df = kospi.history(period="1d")  # "1d" for the latest data
+
+# Get the last available closing price
+latest_close_price = kospi_df['Close'].iloc[-1]
+st.write(latest_close_price)
 st.subheader("""
 AI Stock Prediction App  
 ver.0.0.1
