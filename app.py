@@ -100,8 +100,8 @@ def AA(ticker_name):
     
 today_2 = date.today().strftime('%Y-%m-%d')
 st.subheader("""
-## AI Stock Prediction App  
-   ver.0.0.1
+AI Stock Prediction App  
+ver.0.0.1
 """)
 st.write("""
         하기 주가예측은 참고용으로만 사용하시기 바랍니다.   
