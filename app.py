@@ -108,7 +108,8 @@ kospi_df = kospi.history(period="1d")  # "1d" for the latest data
 
 # Get the last available closing price
 latest_close_price = kospi_df['Close'].iloc[-1]
-latest_close_price = int(latest_close_price)
+latest_close_price = round(latest_close_price, 2)
+
 st.subheader("""
 AI Stock Prediction App  
 ver.0.0.1
