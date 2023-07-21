@@ -118,8 +118,9 @@ st.write("""
         이 주가예측 시스템은 사용자의 투자의 이익이나 손실에 대해 어떠한 책임도 지지 않습니다.  
         이 시스템은 AI에 기반한 것으로, 정확도나 신뢰도를 보장하지 않습니다.     
         """)
-st.write(f"이 예측은 {today_2}부터 5일후까지의 예측입니다")
 st.write(f"오늘 {today_2}의 코스피 지수는 {latest_close_price} 입니다." )
+st.write(f"이 예측은 {today_2}부터 5일후까지의 예측입니다")
+st.subheader(""" 주가 예측 """)
 with st.form(key='my_form'):
     ticker_num = st.text_input("종목명 또는 종목코드를 입력하세요: ")
    # 종목 코드 또는 이름에 따라 종목 찾기
